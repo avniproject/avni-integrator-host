@@ -8,8 +8,8 @@ START_AB_I=./start-ab-integrator.sh
 SERVICE=abi.service
 
 create_dirs() {
-    if [[ ! -e logs ]]; then
-        mkdir logs
+    if [[ ! -e /var/log/abi ]]; then
+        mkdir /var/log/abi
     fi
 }
 
