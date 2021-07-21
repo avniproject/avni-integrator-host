@@ -33,6 +33,7 @@ export INT_SCHEDULE_CRON=\"0 0 1 * * ?\"
 #export INT_SCHEDULE_CRON=\"0/3 * * * * ?\"
 export INT_APP_TASKS=AvniSubject,AvniEnrolment,AvniProgramEncounter,BahmniVisitDateFix
 export INT_DB_NAME=bahmni_avni
+#/usr/java/jdk-15.0.2+7/bin/java --enable-preview -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 integrator-0.0.1-SNAPSHOT.jar
 /usr/java/jdk-15.0.2+7/bin/java --enable-preview -jar integrator-0.0.1-SNAPSHOT.jar" > ${START_AB_I}
 chmod 755 ${START_AB_I}
 echo "Generated ${START_AB_I} ..."
