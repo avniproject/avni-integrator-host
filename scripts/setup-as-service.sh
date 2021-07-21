@@ -4,26 +4,21 @@ set -e
 
 if [[ $(id -u) -ne 0 ]] ; then echo "root/sudo privileges required" ; exit 1 ; fi
 
-THIS_DIR=$(readlink -f $(dirname "$0"))
-SCRIPTS_DIR=$(dirname ${THIS_DIR})
-PROJECT_DIR=../$(dirname ${SCRIPTS_DIR})
 START_AB_I=${PROJECT_DIR}/start-ab-integrator.sh
 SERVICE=abi.service
 JAVA_PATH=/usr/java/jdk-15.0.2+7
 
-echo "Using project directory as ${PROJECT_DIR}"
-
 create_dirs() {
-    if [[ ! -e ${PROJECT_DIR}/logs ]]; then
-        mkdir ${PROJECT_DIR}/logs
+    if [[ ! -e logs ]]; then
+        mkdir logs
     fi
 }
+
+create_dirs
 
 read -p "BUGSNAG_API_KEY=" BUGSNAG_API_KEY
 read -p "AVNI_API_PASSWORD=" AVNI_API_PASSWORD
 read -p "BAHMNI_OPENMRS_API_PASSWORD=" BAHMNI_OPENMRS_API_PASSWORD
-
-create_dirs
 
 echo "#!/bin/bash
 export BUGSNAG_API_KEY=${BUGSNAG_API_KEY}
