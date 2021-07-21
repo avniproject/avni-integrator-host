@@ -28,6 +28,7 @@ export AVNI_API_USER=avni-to-bahmni@ashwini
 export BAHMNI_OPENMRS_API_URL=http://localhost:8050
 export BAHMNI_OPENMRS_API_USER=avni_integration_txdata_admin
 export INT_SCHEDULE_CRON=\"0 0 1 * * ?\"
+#export INT_SCHEDULE_CRON=\"0/3 * * * * ?\"
 export INT_APP_TASKS=AvniSubject,AvniEnrolment,AvniProgramEncounter
 export INT_DB_NAME=bahmni_avni
 /usr/java/jdk-15.0.2+7/bin/java --enable-preview -jar integrator-0.0.1-SNAPSHOT.jar" > ${START_AB_I}
