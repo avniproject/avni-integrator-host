@@ -4,12 +4,12 @@ set -e
 
 if [[ $(id -u) -ne 0 ]] ; then echo "root/sudo privileges required" ; exit 1 ; fi
 
-THIS_DIR=$(readlink -f $(dirname "$0"))
-SCRIPTS_DIR=$(dirname ${THIS_DIR})
-PROJECT_DIR=../$(dirname ${SCRIPTS_DIR})
+PROJECT_DIR=$(readlink -f $(dirname "$0"))
 START_AB_I=${PROJECT_DIR}/start-ab-integrator.sh
 SERVICE=abi.service
 JAVA_PATH=/usr/java/jdk-15.0.2+7
+
+echo "Using project directory as ${PROJECT_DIR}"
 
 create_dirs() {
     if [[ ! -e ${PROJECT_DIR}/logs ]]; then
