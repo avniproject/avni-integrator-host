@@ -10,7 +10,6 @@ SERVICE=abi.service
 create_dirs() {
     if [[ ! -e /var/log/abi ]]; then
         mkdir /var/log/abi
-        chown -R bahmni:bahmni /var/log/abi
     fi
 }
 
@@ -33,7 +32,6 @@ export INT_APP_TASKS=AvniSubject,AvniEnrolment,AvniProgramEncounter
 export INT_DB_NAME=bahmni_avni
 /usr/java/jdk-15.0.2+7/bin/java --enable-preview -jar integrator-0.0.1-SNAPSHOT.jar" > ${START_AB_I}
 chmod 755 ${START_AB_I}
-chown -R bahmni:bahmni ${START_AB_I}
 echo "Generated ${START_AB_I} ..."
 
 cp ./abi.service /etc/systemd/system/
