@@ -3,7 +3,7 @@ Description=Avni Bahmni Integrator
 After=postgresql-9.6.service
 
 [Service]
-User=bahmni
+User=root
 
 WorkingDirectory=/root/abi-host
 ExecStart=/root/abi-host/start-ab-integrator.sh
