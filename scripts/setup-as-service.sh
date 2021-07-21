@@ -10,6 +10,7 @@ SERVICE=abi.service
 create_dirs() {
     if [[ ! -e /var/log/abi ]]; then
         mkdir /var/log/abi
+        chown -R bahmni:bahmni
     fi
 }
 
