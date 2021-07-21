@@ -4,7 +4,9 @@ set -e
 
 if [[ $(id -u) -ne 0 ]] ; then echo "root/sudo privileges required" ; exit 1 ; fi
 
-PROJECT_DIR=$(dirname ../$(readlink -f $(dirname "$0")))
+THIS_DIR=$(readlink -f $(dirname "$0"))
+SCRIPTS_DIR=$(dirname ${THIS_DIR})
+PROJECT_DIR=../$(dirname ${SCRIPTS_DIR})
 START_AB_I=${PROJECT_DIR}/start-ab-integrator.sh
 SERVICE=abi.service
 JAVA_PATH=/usr/java/jdk-15.0.2+7
