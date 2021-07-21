@@ -4,7 +4,7 @@ set -e
 
 if [[ $(id -u) -ne 0 ]] ; then echo "root/sudo privileges required" ; exit 1 ; fi
 
-START_AB_I=${PROJECT_DIR}/start-ab-integrator.sh
+START_AB_I=./start-ab-integrator.sh
 SERVICE=abi.service
 JAVA_PATH=/usr/java/jdk-15.0.2+7
 
@@ -36,9 +36,9 @@ chmod 755 ${START_AB_I}
 chown -R bahmni:bahmni ${START_AB_I}
 echo "Generated ${START_AB_I} ..."
 
-sed -e "s;%WORKING_DIR%;${PROJECT_DIR};g" ${THIS_DIR}/${SERVICE}.template > /etc/systemd/system/${SERVICE}
-echo "Created /etc/systemd/system/${SERVICE} ..."
+cp abi.service /etc/systemd/system/
+echo "Created /etc/systemd/system/abi.service ..."
 
 echo "systemctl daemon-reload ..."
 systemctl daemon-reload
-systemctl enable ${SERVICE}
+systemctl enable abi.service
