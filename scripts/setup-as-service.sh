@@ -36,7 +36,7 @@ chmod 755 ${START_AB_I}
 chown -R bahmni:bahmni ${START_AB_I}
 echo "Generated ${START_AB_I} ..."
 
-cp abi.service /etc/systemd/system/
+cp ./abi.service /etc/systemd/system/
 echo "Created /etc/systemd/system/abi.service ..."
 
 echo "systemctl daemon-reload ..."
