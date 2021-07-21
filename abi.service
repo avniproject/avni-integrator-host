@@ -6,7 +6,7 @@ After=postgresql-9.6.service
 User=bahmni
 
 WorkingDirectory=/root/abi-host
-ExecStart=%WORKING_DIR%/start-ab-integrator.sh
+ExecStart=/root/abi-host/start-ab-integrator.sh
 
 SuccessExitStatus=143
 TimeoutStopSec=10
