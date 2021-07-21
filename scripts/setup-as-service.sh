@@ -11,9 +11,17 @@ START_AB_I=${PROJECT_DIR}/start-ab-integrator.sh
 SERVICE=abi.service
 JAVA_PATH=/usr/java/jdk-15.0.2+7
 
+create_dirs() {
+    if [[ ! -e ${PROJECT_DIR}/logs ]]; then
+        mkdir ${PROJECT_DIR}/logs
+    fi
+}
+
 read -p "BUGSNAG_API_KEY=" BUGSNAG_API_KEY
 read -p "AVNI_API_PASSWORD=" AVNI_API_PASSWORD
 read -p "BAHMNI_OPENMRS_API_PASSWORD=" BAHMNI_OPENMRS_API_PASSWORD
+
+create_dirs
 
 echo "#!/bin/bash
 export BUGSNAG_API_KEY=${BUGSNAG_API_KEY}
