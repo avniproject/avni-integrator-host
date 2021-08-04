@@ -1,4 +1,5 @@
 .idea
 *.jar
 start-ab-integrator.sh
+scripts/run-migrator.sh
 backup

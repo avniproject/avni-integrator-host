@@ -13,7 +13,7 @@ restore-backup-from-vagrant:
 	scp -P 2222 -i ~/.vagrant.d/insecure_private_key root@127.0.0.1:/root/source/abi-host/backup/backup.sql /tmp/abi-backup.sql
 
 restore-remote-backup:
-	sh scripts/restore-db.sh backup/remote-backup.sql $(postgres_user)
+	sh scripts/restore-db.sh /tmp/abi-backup.sql $(postgres_user)
 
 backup-db:
 	sh scripts/backup-db.sh
