@@ -1,5 +1,6 @@
 .idea
 *.jar
 start-ab-integrator.sh
-scripts/run-migrator.sh
+run-migrator.sh
+abi-admin-app
 backup
