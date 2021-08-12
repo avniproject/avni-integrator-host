@@ -4,3 +4,4 @@ start-ab-integrator.sh
 run-migrator.sh
 abi-admin-app
 backup
+logs
