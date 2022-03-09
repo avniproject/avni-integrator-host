@@ -15,6 +15,9 @@ restore-backup-from-vagrant:
 restore-remote-backup:
 	sh scripts/restore-db.sh /tmp/abi-backup.sql $(postgres_user)
 
+restore-backup:
+	sh scripts/restore-db.sh backup/backup.sql $(postgres_user)
+
 backup-db:
 	sh scripts/backup-db.sh
 
