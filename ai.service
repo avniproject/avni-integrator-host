@@ -1,0 +1,17 @@
+[Unit]
+Description=Avni Integrator Service
+After=
+
+[Service]
+User=<ENTER_USER_HERE>
+
+WorkingDirectory=/opt/avni/avni-integrator-host
+ExecStart=/opt/avni/avni-integrator-host/start-ab-integrator.sh
+
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
